@@ -89,7 +89,8 @@ class Queue {
     $opts = (is_array($opts) ? $opts : array($opts));
 
     // Set timestamp and delay
-    $timestamp = intval(str_replace('.', '', microtime(true)));
+    // $timestamp = intval(str_replace('.', '', microtime(true)));
+    $timestamp = round(microtime(true) * 1000);
     $delay = (isset($opts['delay']) ? intval($opts['delay']) : 0);
 
     // Merge defaults with $opts
